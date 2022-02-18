@@ -34,6 +34,10 @@ SELECT *
 --rollback changes 
 ROLLBACK WORK;
 
+-- check the changes to verify
+SELECT * 
+  FROM animals;
+
 /* update the animals table by setting species column to
  digimon if name ends with 'mon', pokemon if species is NULL
 */
