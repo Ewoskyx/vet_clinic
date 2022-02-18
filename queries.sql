@@ -42,3 +42,33 @@ where weight_kg
 between 10.4 AND 17.3
 
 SELECT * FROM animals WHERE name = 'Luna';
+
+/* Count of animals */
+SELECT COUNT(*)
+  FROM animals;
+
+/* The number of animals that are not attempted to escape */
+SELECT COUNT(*)
+  FROM animals
+  WHERE escape_attempts = 0;
+
+/* Avarage weight of animals */
+SELECT AVG(weight_kg)
+  FROM animals;
+
+/* Who escaped most by neutered */
+SELECT neutered, SUM(escape_attempts)
+  FROM animals
+  GROUP BY neutered;
+
+/* min max weights of each type of animal*/
+SELECT neutered, MIN(weight_kg), MAX(weight_kg)
+  FROM animals
+  GROUP BY neutered;
+
+/* Average number of escape attempts per animal type of those born between 1990 and 2000 */
+SELECT neutered, AVG(escape_attempts)
+  FROM animals
+  WHERE date_of_birth 
+    BETWEEN 'Jan 1, 1990' AND 'Dec 31, 2000'
+  GROUP BY neutered;  

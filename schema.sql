@@ -8,8 +8,8 @@ CREATE TABLE animals(
   weight_kg DECIMAL,
   PRIMARY KEY(id)
 );
-/* Database schema to keep the structure of entire database. */
 
-CREATE TABLE animals (
-    name varchar(100)
-);
+/* Add Column species */
+ALTER TABLE animals 
+  ADD species VARCHAR(255);
+
