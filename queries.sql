@@ -236,3 +236,8 @@ SELECT
   GROUP BY vt.name, spec.name
   ORDER BY COUNT DESC
   LIMIT 1;
+
+/* Create Indexes for performance improvement */
+CREATE INDEX owners_name_desc ON owners(email DESC);
+CREATE INDEX visits_vetID_asc ON visits (vets_id ASC);
+CREATE INDEX visits_animal_id_asc ON visits (animal_id ASC);
